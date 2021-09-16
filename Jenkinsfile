@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh 'node server.js'
                             steps {
-                    if ("${stdout}" == `Server is listening on port 3000`){
+                    if ("${stdout}" == 'Server is listening on port 3000'){
                     currentBuild.result = 'UNSTABLE'
                     return
                     }

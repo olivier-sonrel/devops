@@ -32,7 +32,7 @@ pipeline {
             echo 'I failed :('
         }
         unstable {
-            echo 'I am unstable :/'
+            echo 'I am so unstable :/'
         }
         changed {
             'Things were different before...'

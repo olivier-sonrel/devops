@@ -4,6 +4,12 @@ pipeline {
     environment {
         CI = 'true'
     }
+    
+   stage('Cloning Git') {
+      steps {
+        git 'https://github.com/olivier-sonrel/devops'
+      }
+    }
     stages {
         stage('Build') {
             steps {
@@ -12,7 +18,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                input message: 'Finished. Lance the website? (Click "Proceed" to continue)'
+                sh 'npm test'
             }
         }
         stage('Deliver') {

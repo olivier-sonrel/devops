@@ -24,6 +24,13 @@ pipeline {
             steps {
                 sh 'node server.js'
             }
+             steps {
+                script{
+                    if ("${stdout}" == "Server is listening on port 3000"){
+                    currentBuild.result = 'SUCCESSE'
+                    return
+                    }
+            } 
         }
     }
         post {

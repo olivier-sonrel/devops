@@ -18,17 +18,13 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm test'
+                sh "exit 1"
             }
         }
         stage('Deliver') {
             steps {
                 sh 'node server.js'
-                            script {
-                    if ("${stdout}" == 'Server is listening on port 3000'){
-                    currentBuild.result = 'UNSTABLE'
-                    return
-                    }
-                 }
+
             }
         }
     }

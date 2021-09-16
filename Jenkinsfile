@@ -23,6 +23,10 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh 'node server.js'
+                    if ("${stdout}" == "1"){
+                    currentBuild.result = 'UNSTABLE'
+                    return
+                    }
             }
         }
     }

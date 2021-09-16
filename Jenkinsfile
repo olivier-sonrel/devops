@@ -23,7 +23,6 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh 'node server.js'
-                sh "exit 1"
             }
         }
     }

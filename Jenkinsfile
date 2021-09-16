@@ -30,6 +30,7 @@ pipeline {
                     currentBuild.result = 'SUCCESSE'
                     return
                     }
+                }
             } 
         }
     }

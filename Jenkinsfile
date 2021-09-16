@@ -18,13 +18,12 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm test'
-                sh "exit 1"
             }
         }
         stage('Deliver') {
             steps {
                 sh 'node server.js'
-
+                sh "exit 1"
             }
         }
     }

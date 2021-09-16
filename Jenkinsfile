@@ -6,12 +6,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'git pull'
                 sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                input message: 'Finished. Lance the website? (Click "Proceed" to continue)'
             }
         }
         stage('Deliver') {

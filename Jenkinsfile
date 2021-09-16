@@ -5,11 +5,6 @@ pipeline {
         CI = 'true'
     }
     
-   stage('Cloning Git') {
-      steps {
-        git 'https://github.com/olivier-sonrel/devops'
-      }
-    }
     stages {
         stage('Build') {
             steps {

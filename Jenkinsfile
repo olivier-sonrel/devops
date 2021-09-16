@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'git pull'
                 sh 'npm install'
             }
         }
@@ -34,7 +35,7 @@ pipeline {
             echo 'I am so unstable :/'
         }
         changed {
-            'Things were different before...'
+            echo 'Things were different before...'
         }
     }
 }
